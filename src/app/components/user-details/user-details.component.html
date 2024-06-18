@@ -1,0 +1,27 @@
+<div *ngIf="user">
+    <h2>{{ user.name }}</h2>
+    <p>{{ user.email }}</p>
+    <button mat-raised-button color="primary" (click)="openAddPolicyDialog()">Add Policy</button>
+    <mat-form-field>
+      <mat-label>Filter by Start Date</mat-label>
+      <input matInput [matDatepicker]="picker" (dateChange)="filterPolicies($event)">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  
+    <div *ngIf="policies && policies.length">
+      <mat-list>
+        <mat-list-item *ngFor="let policy of filteredPolicies">
+          <h4 mat-line>{{ policy.policyNumber }}</h4>
+          <p mat-line>{{ policy.insuranceAmount }} - {{ policy.startDate | date }} to {{ policy.endDate | date }}</p>
+          <button mat-icon-button (click)="editPolicy(policy)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button (click)="deletePolicy(policy.id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </div>
+  

@@ -1,0 +1,47 @@
+/* User List Styles */
+.user-list-container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .user-list-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .user-list-container h2 {
+    margin-top: 0;
+    font-size: 24px;
+    text-align: center;
+    color: #6200ea;
+  }
+  
+  .user-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    transition: background 0.3s ease;
+  }
+  
+  .user-item:last-child {
+    border-bottom: none;
+  }
+  
+  .user-item:hover {
+    background: rgba(98, 0, 234, 0.1);
+  }
+  
+  .user-actions button {
+    margin-right: 10px;
+    transition: transform 0.2s ease;
+  }
+  
+  .user-actions button:hover {
+    transform: scale(1.1);
+  }
+  

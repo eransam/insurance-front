@@ -1,0 +1,14 @@
+<div class="container">
+    <h1>User List</h1>
+    <button mat-raised-button color="primary" (click)="openUserForm()">Add User</button>
+    <button mat-raised-button color="primary" (click)="loadUsers()">Refresh List</button>
+    <mat-list>
+      <mat-list-item *ngFor="let user of users">
+        <span>{{ user.name }} ({{ user.email }})</span>
+        <button mat-button (click)="selectUser(user)">View Details</button>
+        <button mat-button (click)="openUserForm(user)">Edit</button>
+        <button mat-button color="warn" (click)="deleteUser(user.id)">Delete</button>
+      </mat-list-item>
+    </mat-list>
+  </div>
+  
